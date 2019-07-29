@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class TodoTableSeeder extends Seeder
 {
@@ -11,6 +12,14 @@ class TodoTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('todos')->insert([
+          'todo' => 'piano'
+        ]);
+        DB::table('todos')->insert([
+          'todo' => 'cooking'
+        ]);
+        DB::table('todos')->insert([
+          'todo' => 'sleep'
+        ]);
     }
 }
