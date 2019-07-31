@@ -30,12 +30,21 @@ window.Vue = require('vue');
  const app = new Vue({
    el: '#app',
    data: {
+     new_todo: '',
      todos: []
    },
    methods: {
      fetchTodos: function(){ //←axios.getでTODOリストを取得しています
        axios.get('/api/get').then((res)=>{
          this.todos = res.data //←取得したTODOリストをtodosに格納
+       })
+     },
+     addTodo: function() {
+       axios.post('api/add', {
+         todo: this.new_todo
+       }).then((res) => {
+         this.todos = res.data
+         this.new_todo = ''
        })
      }
    },
