@@ -27,19 +27,20 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
-    el: '#app',
-    data: {
-      todos[]
-    },
-    methods: {
-      fetchTodos: function() {
-        axios.get('api/get').then((res) => {
-          this.todos = res.data
-        })
-      }
-    },
-    created() {
-      this.fetchTodos()
-    },
-});
+ const app = new Vue({
+   el: '#app',
+   data: {
+     todos: []
+   },
+   methods: {
+     fetchTodos: function(){ //←axios.getでTODOリストを取得しています
+       axios.get('/api/get').then((res)=>{
+         this.todos = res.data //←取得したTODOリストをtodosに格納
+       })
+     }
+   },
+   created() {  //←インスタンス生成時にfetchTodos()を実行したいので、createdフックに登録します。
+     this.fetchTodos()
+   },
+
+ });

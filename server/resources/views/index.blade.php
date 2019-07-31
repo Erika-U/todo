@@ -20,9 +20,9 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>お料理</td>
+          <tr v-for="todo in todos" v-bind:key="todo.id">
+            <td>@{{ todo.id }}</td>
+            <td>@{{ todo.todo }}</td>
             <td><button type="button" name="button">できた</button></td>
           </tr>
         </tbody>
