@@ -9,8 +9,8 @@
   <body>
     <div id="app">
       <h1>ゆる〜くTODO</h1>
-      <input type="text" placeholder="すること書いてね">
-      <button type="button" class="task_add">ついか</button>
+      <input type="text" placeholder="すること書いてね" v-model="new_todo">
+      <button type="button" class="task_add" v-on:click="addTodo">ついか</button>
       <table>
         <thead>
           <tr>
