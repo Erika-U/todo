@@ -12,4 +12,13 @@ class TodoController extends Controller
       $todos = Todo::all();
       return $todos;
     }
+
+    public function addTodo(Request $request) {
+      $todo = new Todo;
+      $todo->todo = $request->todo;
+      $todo->save();
+
+      $todos = Todo::all();
+      return $todos;
+    }
 }
