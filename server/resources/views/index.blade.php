@@ -23,7 +23,7 @@
           <tr v-for="todo in todos" v-bind:key="todo.id">
             <td>@{{ todo.id }}</td>
             <td>@{{ todo.todo }}</td>
-            <td><button type="button" name="button">できた</button></td>
+            <td><button type="button" name="button" v-on:click="deleteTodo(todo.id)">できた</button></td>
           </tr>
         </tbody>
       </table>

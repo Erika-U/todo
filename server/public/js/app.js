@@ -49172,18 +49172,40 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 var app = new Vue({
   el: '#app',
   data: {
+    new_todo: '',
     todos: []
   },
   methods: {
     fetchTodos: function fetchTodos() {
       var _this = this;
 
-      axios.get('api/get').then(function (res) {
-        _this.todos = res.data;
+      //←axios.getでTODOリストを取得しています
+      axios.get('/api/get').then(function (res) {
+        _this.todos = res.data; //←取得したTODOリストをtodosに格納
+      });
+    },
+    addTodo: function addTodo() {
+      var _this2 = this;
+
+      axios.post('api/add', {
+        todo: this.new_todo
+      }).then(function (res) {
+        _this2.todos = res.data;
+        _this2.new_todo = '';
+      });
+    },
+    deleteTodo: function deleteTodo(task_id) {
+      var _this3 = this;
+
+      axios.post('api/del', {
+        id: task_id
+      }).then(function (res) {
+        _this3.todos = res.data;
       });
     }
   },
   created: function created() {
+    //←インスタンス生成時にfetchTodos()を実行したいので、createdフックに登録します。
     this.fetchTodos();
   }
 });

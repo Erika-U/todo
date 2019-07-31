@@ -46,6 +46,13 @@ window.Vue = require('vue');
          this.todos = res.data
          this.new_todo = ''
        })
+     },
+     deleteTodo: function(task_id) {
+       axios.post('api/del', {
+         id: task_id
+       }).then((res) => {
+         this.todos = res.data
+       })
      }
    },
    created() {  //←インスタンス生成時にfetchTodos()を実行したいので、createdフックに登録します。
