@@ -1,27 +1,42 @@
+@charset "UTF-8";
+
 body {
   width: 80%;
   margin: 0 auto;
   text-align: center;
+  font-family: "Kosugi Maru", sans-serif;
+  color: #A09070;
 }
 
-body h1 {
-  color: pink;
-  font-size: 600px;
+body i {
+  color: #E1C0B6;
 }
 
 body .button {
+  font-family: "Kosugi Maru", sans-serif;
+  color: white;
   display: inline-block;
   padding: 0.3em 1.1em;
-  border: 2px solid #333;
+  border: 2px solid #DFCB8C;
   border-radius: 3em 0.5em 2em 0.5em/0.4em 2em 0.5em 3em;
-  color: #333;
   text-decoration: none;
   text-align: center;
+  background-color: #DFCB8C;
 }
 
 body h1 {
+  margin: 0 auto;
   margin-top: 50px;
   margin-bottom: 50px;
+  letter-spacing: 5px;
+  color: #BA6F87;
+  font-size: 50px;
+  background-color: #B2CDBA;
+  /* 背景色 */
+  background-image: radial-gradient(#fff 20%, transparent 0), radial-gradient(#fff 20%, transparent 0);
+  background-position: 0 0, 10px 10px;
+  background-size: 20px 20px;
+  width: 500px;
 }
 
 body div.form {
@@ -29,12 +44,44 @@ body div.form {
 }
 
 body div.form input {
+  font-family: "Kosugi Maru", sans-serif;
   width: 250px;
-  border-bottom: #FF1493 1px solid;
+  display: inline-block;
+  padding: 0.3em 1.1em;
+  border: 2px solid #DFCB8C;
+  border-radius: 3em 0.5em 2em 0.5em/0.4em 2em 0.5em 3em;
+  color: #A09070;
+  text-decoration: none;
+  text-align: center;
+}
+
+body div.form ::-webkit-input-placeholder {
+  color: #A09070;
+}
+
+body div.form ::-moz-placeholder {
+  color: #A09070;
+}
+
+body div.form :-ms-input-placeholder {
+  color: #A09070;
+}
+
+body div.form ::-ms-input-placeholder {
+  color: #A09070;
+}
+
+body div.form ::placeholder {
+  color: #A09070;
 }
 
 body table {
   margin: 0 auto;
+}
+
+body table th {
+  color: #B4BB8C;
+  font-size: 18px;
 }
 
 body table thead:after {

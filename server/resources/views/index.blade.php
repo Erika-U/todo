@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <title>TODO</title>
      <meta name="csrf-token" content="{{ csrf_token() }}">
-     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+     <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap" rel="stylesheet">
      <script src="https://kit.fontawesome.com/85ed13b77e.js"></script>
   </head>
   <body>
     <div id="app" class="main">
-      <h1>ゆる〜くTODO</h1>
-      @{{ new_todo }}
+      <h1>TODOリスト</h1>
       <div class="form">
         <input type="text" placeholder="すること書いてね" v-model.trim="new_todo">
         <button type="button" class="button" v-on:click="addTodo">ついか</button>
@@ -24,7 +24,7 @@
         </thead>
         <tbody>
           <tr v-for="todo in todos" v-bind:key="todo.id">
-            <td class="todo"><i class="fas fa-paw"></i>@{{ todo.todo }}</td>
+            <td class="todo"><i class="fas fa-paw"></i>　@{{ todo.todo }}</td>
             <td><button type="button" class="button" name="button" v-on:click="deleteTodo(todo.id)">できた</button></td>
           </tr>
         </tbody>

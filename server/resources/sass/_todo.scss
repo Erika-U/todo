@@ -2,38 +2,65 @@ body {
   width: 80%;
   margin: 0 auto;
   text-align: center;
+  font-family: 'Kosugi Maru', sans-serif;
+  color: #A09070;
 
-  h1 {
-    color: pink;
-    font-size: 600px;
+  i {
+    color: #E1C0B6;
   }
 
   .button {
+    font-family: 'Kosugi Maru', sans-serif;
+    color: white;
     display: inline-block;
     padding: .3em 1.1em;
-    border: 2px solid #333;
+    border: 2px solid #DFCB8C;
     border-radius: 3em .5em 2em .5em/.4em 2em .5em 3em;
-    color: #333;
     text-decoration: none;
     text-align: center;
+    background-color: #DFCB8C;
   }
 
   h1 {
+    margin: 0 auto;
     margin-top: 50px;
     margin-bottom: 50px;
+    letter-spacing: 5px;
+    color: #BA6F87;
+    font-size: 50px;
+    background-color: #B2CDBA; /* 背景色 */
+    background-image: radial-gradient(#fff 20%, transparent 0), radial-gradient(#fff 20%, transparent 0);
+    background-position: 0 0, 10px 10px;
+    background-size: 20px 20px;
+    width: 500px;
   }
 
   div.form {
     margin-bottom: 40px;
 
     input {
+      font-family: 'Kosugi Maru', sans-serif;
       width: 250px;
-      border-bottom:#FF1493 1px solid;
+      display: inline-block;
+      padding: .3em 1.1em;
+      border: 2px solid #DFCB8C;
+      border-radius: 3em .5em 2em .5em/.4em 2em .5em 3em;
+      color: #A09070;
+      text-decoration: none;
+      text-align: center;
+    }
+    ::placeholder{
+      color:#A09070;
     }
   }
 
   table {
     margin: 0 auto;
+
+    th {
+      color: #B4BB8C;
+      font-size: 18px;
+    }
 
     thead:after {
     	content: "";
