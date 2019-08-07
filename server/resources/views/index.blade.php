@@ -5,25 +5,27 @@
     <title>TODO</title>
      <meta name="csrf-token" content="{{ csrf_token() }}">
      <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+     <script src="https://kit.fontawesome.com/85ed13b77e.js"></script>
   </head>
   <body>
-    <div id="app">
+    <div id="app" class="main">
       <h1>ゆる〜くTODO</h1>
-      <input type="text" placeholder="すること書いてね" v-model="new_todo">
-      <button type="button" class="task_add" v-on:click="addTodo">ついか</button>
+      @{{ new_todo }}
+      <div class="form">
+        <input type="text" placeholder="すること書いてね" v-model.trim="new_todo">
+        <button type="button" class="button" v-on:click="addTodo">ついか</button>
+      </div>
       <table>
         <thead>
           <tr>
-            <th>No.</th>
-            <th>すること</th>
+            <th class="todo-head">すること</th>
             <th>おわったら押す</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="todo in todos" v-bind:key="todo.id">
-            <td>@{{ todo.id }}</td>
-            <td>@{{ todo.todo }}</td>
-            <td><button type="button" name="button" v-on:click="deleteTodo(todo.id)">できた</button></td>
+            <td class="todo"><i class="fas fa-paw"></i>@{{ todo.todo }}</td>
+            <td><button type="button" class="button" name="button" v-on:click="deleteTodo(todo.id)">できた</button></td>
           </tr>
         </tbody>
       </table>

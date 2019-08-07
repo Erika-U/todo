@@ -49187,6 +49187,7 @@ var app = new Vue({
     addTodo: function addTodo() {
       var _this2 = this;
 
+      if (this.new_todo == '') return;
       axios.post('api/add', {
         todo: this.new_todo
       }).then(function (res) {

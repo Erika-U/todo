@@ -40,6 +40,7 @@ window.Vue = require('vue');
        })
      },
      addTodo: function() {
+       if(this.new_todo == '') return
        axios.post('api/add', {
          todo: this.new_todo
        }).then((res) => {
